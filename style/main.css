@@ -498,3 +498,100 @@ h1 {
   text-align: center;
 }
 /* End footer bottom design */
+/*
+====================================
+    1. Media Query for Tablets
+   (Screens between 601px and 992px)
+====================================
+*/
+@media (min-width: 601px) and (max-width: 992px) {
+  /* تعديل الخطوط الرئيسية لتناسب حجم التابلت */
+  h1 {
+    font-size: 60px;
+  }
+  h2 {
+    font-size: 28px;
+  }
+
+  /* قسم المخبوزات: تحويله من 3 أعمدة إلى عمودين */
+  .meal {
+    width: 50%;
+  }
+
+  /* الفوتر: تحويله من 4 أعمدة إلى عمودين */
+  .about-us,
+  .why-special,
+  .opening,
+  .contact-detail {
+    width: 50%;
+    margin-bottom: 40px;
+  }
+}
+
+/*
+====================================
+    2. Media Query for Phones
+   (Screens up to 600px)
+====================================
+*/
+@media (max-width: 600px) {
+  /* تعديل الحاويات الرئيسية ليكون لها مسافات داخلية بدل الهوامش الخارجية */
+  .about,
+  .our-location-container,
+  .gallery,
+  .Contact-Info,
+  .footer,
+  .container {
+    width: 100%; /* تأخذ العرض الكامل */
+    padding-left: 15px; /* مسافة أمان على اليسار */
+    padding-right: 15px; /* مسافة أمان على اليمين */
+  }
+
+  /* --- الشريط العلوي Navbar --- */
+  .header .navbar .logo,
+  .header .navbar .menu-link {
+    float: none;
+    text-align: center;
+    width: 100%;
+  }
+  .header .navbar .logo img {
+    width: 45%;
+    margin-bottom: 15px;
+  }
+  .header .navbar li {
+    display: block;
+    padding: 10px 0;
+  }
+
+  /* --- الهيدر Header --- */
+  .header .header-text {
+    padding: 100px 0; /* المسافات الجانبية أصبحت في العنصر الأب */
+  }
+  h1 {
+    font-size: 42px;
+  }
+  .header p {
+    font-size: 18px;
+  }
+
+  /* --- تحويل جميع الأعمدة إلى عمود واحد --- */
+  .about-img,
+  .about-text,
+  .our-img,
+  .our-text,
+  .map,
+  .Contact-text,
+  .meal,
+  .about-us,
+  .why-special,
+  .opening,
+  .contact-detail {
+    width: 100%;
+    float: none;
+    margin-bottom: 30px;
+  }
+
+  .footer {
+    text-align: center;
+  }
+}
