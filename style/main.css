@@ -1,5 +1,7 @@
 * {
   margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 body {
   margin: 0;
@@ -498,14 +500,121 @@ h1 {
   text-align: center;
 }
 /* End footer bottom design */
-/*
-====================================
-    1. Media Query for Tablets
-   (Screens between 601px and 992px)
-====================================
-*/
+
+/* media query */
+@media (max-width: 768px) {
+  .header .header-text {
+    padding: 80px 20px;
+    text-align: center;
+  }
+
+  .header-text h1 {
+    font-size: 45px;
+  }
+
+  .header-text p {
+    font-size: 16px;
+    line-height: 1.6;
+  }
+
+  .header-text .button {
+    padding: 12px 20px;
+    font-size: 14px;
+    margin: 10px 5px;
+  }
+
+  .navbar .container-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+  }
+
+  .navbar .logo img {
+    width: 120px;
+  }
+
+  .nav-toggle-label {
+    display: block;
+    width: 28px;
+    height: 22px;
+    cursor: pointer;
+    position: relative;
+    z-index: 1000;
+  }
+
+  .nav-toggle-label span,
+  .nav-toggle-label span::before,
+  .nav-toggle-label span::after {
+    display: block;
+    position: absolute;
+    height: 3px;
+    width: 100%;
+    background: white;
+    border-radius: 2px;
+    transition: all 0.3s ease;
+  }
+
+  .nav-toggle-label span::before {
+    content: "";
+    top: -8px;
+  }
+
+  .nav-toggle-label span::after {
+    content: "";
+    top: 8px;
+  }
+
+  .nav-toggle {
+    display: none;
+  }
+
+  .menu-link {
+    display: none;
+    position: absolute;
+    top: 65px;
+    left: 0;
+    width: 100%;
+    background-color: rgba(40, 40, 40, 0.95);
+  }
+
+  .menu-link ul {
+    width: 100%;
+  }
+
+  .menu-link li {
+    display: block;
+    text-align: center;
+    padding: 20px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .menu-link li:last-child {
+    border-bottom: none;
+  }
+
+  .nav-toggle:checked ~ .menu-link {
+    display: block;
+  }
+
+  .nav-toggle:checked ~ .nav-toggle-label span {
+    background: transparent;
+  }
+  .nav-toggle:checked ~ .nav-toggle-label span::before {
+    transform: rotate(45deg);
+    top: 0;
+  }
+  .nav-toggle:checked ~ .nav-toggle-label span::after {
+    transform: rotate(-45deg);
+    top: 0;
+  }
+
+  .clear-fix {
+    display: none;
+  }
+}
+
 @media (min-width: 601px) and (max-width: 992px) {
-  /* تعديل الخطوط الرئيسية لتناسب حجم التابلت */
   h1 {
     font-size: 60px;
   }
@@ -513,12 +622,10 @@ h1 {
     font-size: 28px;
   }
 
-  /* قسم المخبوزات: تحويله من 3 أعمدة إلى عمودين */
   .meal {
     width: 50%;
   }
 
-  /* الفوتر: تحويله من 4 أعمدة إلى عمودين */
   .about-us,
   .why-special,
   .opening,
@@ -528,26 +635,18 @@ h1 {
   }
 }
 
-/*
-====================================
-    2. Media Query for Phones
-   (Screens up to 600px)
-====================================
-*/
 @media (max-width: 600px) {
-  /* تعديل الحاويات الرئيسية ليكون لها مسافات داخلية بدل الهوامش الخارجية */
   .about,
   .our-location-container,
   .gallery,
   .Contact-Info,
   .footer,
   .container {
-    width: 100%; /* تأخذ العرض الكامل */
-    padding-left: 15px; /* مسافة أمان على اليسار */
-    padding-right: 15px; /* مسافة أمان على اليمين */
+    width: 100%;
+    padding-left: 15px;
+    padding-right: 15px;
   }
 
-  /* --- الشريط العلوي Navbar --- */
   .header .navbar .logo,
   .header .navbar .menu-link {
     float: none;
@@ -563,9 +662,8 @@ h1 {
     padding: 10px 0;
   }
 
-  /* --- الهيدر Header --- */
   .header .header-text {
-    padding: 100px 0; /* المسافات الجانبية أصبحت في العنصر الأب */
+    padding: 100px 0;
   }
   h1 {
     font-size: 42px;
@@ -574,7 +672,6 @@ h1 {
     font-size: 18px;
   }
 
-  /* --- تحويل جميع الأعمدة إلى عمود واحد --- */
   .about-img,
   .about-text,
   .our-img,
